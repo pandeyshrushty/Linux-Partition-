@@ -1,6 +1,3 @@
-# Linux-Partition-
-How to create partiion in linux
-
 Create Partitions
 1.disk add karo 1Gb
 2.Fdisk -l /dev/sda
@@ -62,8 +59,31 @@ Create Partitions
 
 partprobe /dev/sda(kernel understanding)(mBr is in sector1)
 
-how to check partitions
+for check
 ls /dev/sda
+
+format partition
+mkfs -t ext4 /dev/sda1(for format)
+lsblk(to show)
+lsblk -f(UUID stands for Universally Unique Identifier. It's a 128-bit number used to uniquely identify information in computer systems for show hdd info)
+
+then Mount
+mkdir /data2
+mount /dev/sda1 /data1
+df -h (for show mounted)
+cd /data1
+touch filesda1
+ls
+
+other directory throw move this file
+cd ..
+mkdir /data2
+umount /data1
+mount /dev/sda1 /data2
+df -h (for show)
+cd /data2
+ls(filesda1 show here)
+
 
 
 filesystem in Linux
