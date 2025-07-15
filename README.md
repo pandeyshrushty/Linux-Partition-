@@ -62,6 +62,8 @@ Create Partitions
 
 partprobe /dev/sda(kernel understanding)(mBr is in sector1)
 
+how to check partitions
+ls /dev/sda
 
 
 filesystem in Linux
