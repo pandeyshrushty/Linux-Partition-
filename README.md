@@ -84,6 +84,54 @@ df -h (for show)
 cd /data2
 ls(filesda1 show here)
 
+parted (delete and create partitions)
+parted -l /dev/sda
+parted /dev/sda
+help
+q=quit
+
+Disklable type=GPt
+fdisk -l /dev/sdb
+fdisk /dev/sdb
+p=print
+m=menu
+n=new
+enter
+enter
+enter
+YES
+g-gpt
+then fdisk /dev/d\sdn(dislable type=GPT)
+the create partition 
+fdisk /dev/sdb
+n=new
+enter
+enter
+enter
++500MB
+p=print
+w=save
+kernel understanding=partprobe /dev.sdb
+mkfs -t xfs /dev/sdb1
+lsblk 
+lsblk /dev/sdb
+lsblk -f /dev/sdb1
+parted /dev/sdb1
+(parted)help
+which partitions are there then (parted)print
+rm 1 (remove partition)
+mkpart primary ext4 1 500MB
+print
+kernel understanding=partprobe /dev/sdb
+lsblk -f /dev/sdb
+mkdir data3
+mkfs -t xfs /dev/sdb1 
+mkfa -f xfs /dev/sdb1
+mount /dev/sdb1 /data3
+df -h
+mount /dev/sdb1 data3
+df -h
+umount /dev/sdb1 data3
 
 
 filesystem in Linux
